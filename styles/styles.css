@@ -135,6 +135,13 @@ a {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'myriad-pro-regular';
+  src: url('../fonts/myriad-pro-regular/myriad-pro-regular.eot');
+  src: url('../fonts/myriad-pro-regular/myriad-pro-regular.eot#iefix') format('embedded-opentype'), url('../fonts/myriad-pro-regular/myriad-pro-regular.woff2') format('woff2'), url('../fonts/myriad-pro-regular/myriad-pro-regular.woff') format('woff'), url('../fonts/myriad-pro-regular/myriad-pro-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   font-family: 'open-sans-regular';
 }
@@ -776,4 +783,45 @@ header .nav ul li a:hover:after {
 #contact form button:hover {
   background: #44c0c2;
   color: #fff;
+}
+#contact .contact {
+  text-align: left;
+  color: #fff;
+}
+#contact .contact h6 {
+  font-size: 24px;
+}
+#contact .contact p {
+  font-size: 14px;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+#contact .contact .socialy {
+  margin: 35px 15px 15px 0;
+  display: inline-block;
+  color: #fff;
+  font-size: 23px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+#contact .contact .f {
+  background: #3b5997;
+}
+#contact .contact .t {
+  background: #3ec2f3;
+}
+#contact .contact .g {
+  background: #e44c41;
+}
+#contact .contact .contact-info {
+  color: #bface2;
+  font-family: 'myriad-pro-regular';
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+#contact .contact .telefone {
+  font-family: 'opensans';
 }

@@ -63,6 +63,7 @@ a{
 @fontRegular: 'open-sans-regular';
 @lobster: 'lobster_1_4';
 @semibold: 'opensans-semibold';
+@myriad: 'myriad-pro-regular';
 
 .font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
   font-family: '@{fontName}';
@@ -83,6 +84,10 @@ a{
 }
 @font-face {
 	.font(@semibold);
+}
+
+@font-face {
+	.font(@myriad);
 }
 
 .float(left){
@@ -674,6 +679,41 @@ header{
 				background: @color-hover;
 				color: #fff;
 			}
+		}
+	}
+	.contact{
+		text-align: left;
+		color: #fff;
+		h6{
+			font-size: 24px;
+		}
+		p{
+			font-size: 14px;
+			.opacity(.5);
+		}
+		.socialy{
+			margin: 35px 15px 15px 0;
+			display: inline-block;
+			color: #fff;
+			font-size: 23px;
+			.border-radius(50%);
+		}
+			.f{
+				background: #3b5997;
+			}
+			.t{
+				background: #3ec2f3;
+			}
+			.g{
+				background: #e44c41;
+			}
+		.contact-info{
+			color: #bface2;
+			font-family: 'myriad-pro-regular';
+			.opacity(1);
+		}
+		.telefone{
+			font-family: 'opensans';
 		}
 	}
 }
