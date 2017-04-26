@@ -615,5 +615,67 @@ header{
 	}
 }
 
+.placeholder(@rules) {
+
+    &::-webkit-input-placeholder {
+        @rules();
+    }
+    &:-moz-placeholder {
+        @rules();
+    }
+    &::-moz-placeholder {
+        @rules();
+    }
+    &:-ms-input-placeholder {
+        @rules();
+    }
+}
+
+#contact{
+	padding: 100px 9.4% 175px;
+	text-align: center;
+	background: #6f6f6f;
+	//background: url("../img/contact-bg.jpg");
+	h5{
+		font-size: 42px;
+		color: #fff;
+	}
+	.contact, form{
+		padding-top: 100px;
+	}
+	form{
+		.clearfix();
+		input, textarea{
+			padding: 15px 20px;
+			width: 100%;
+			margin: 15px 0;
+			.placeholder({
+			color: #c1c1c1;
+			});
+		}
+		input, textarea, button{
+			font-size: 16px;
+			color: @color-hover;
+			border: none;
+			outline: none;
+			.box-sizing();
+			.transition();
+			.border-radius();
+		}
+		textarea{
+		resize: none;
+		}
+		button{
+			padding: 15px 50px;
+			margin-top: 15px;
+			background: #fff;
+			.float(right);
+			&:hover{
+				background: @color-hover;
+				color: #fff;
+			}
+		}
+	}
+}
 
 

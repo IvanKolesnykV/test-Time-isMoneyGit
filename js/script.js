@@ -47,7 +47,7 @@ $('#banner').css({"margin-top" : heightHeader + "px"});
                 $target = $(target);
 
             $('html, body').stop().animate({
-                'scrollTop': $target.offset().top - 130
+                'scrollTop': $target.offset().top - heightHeader
             }, 900, 'swing', function () {
                 window.location.hash = target;
             });
