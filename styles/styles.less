@@ -442,19 +442,35 @@ header{
     z-index: 4;
     color: @color-hover;
     background: #fff;
-    padding: 0px 14px;
     height: 51px;
-    line-height: 38px;
-    font-size: 70px;
-    font-family: 'Arial';
+    width: 51px;
     .border-radius(50%);
     .transform(translate(0, -50%));
     .transition();
+    	&:before{
+			content: '';
+			position: absolute;
+    		top: 50%;
+    		z-index: 4;
+    		width: 20px;
+    		height: 20px;
+    		border-top: 1px @color-hover solid;
+    		border-left: 1px @color-hover solid;
+			margin: -9px -4px;
+    	}
     &.prev{
     	left: 2%;
+    	&:before{
+			left: 50%;
+			.transform(rotate(-45deg));
+    	}
     }
     &.next{
     	right: 2%;
+    	&:before{
+    		right: 50%;
+			.transform(rotate(-225deg));
+    	}
     }
     &:hover{
     	background: @color-hover;
@@ -639,17 +655,38 @@ header{
 #contact{
 	padding: 100px 9.4% 175px;
 	text-align: center;
-	background: #6f6f6f;
-	//background: url("../img/contact-bg.jpg");
+	background: #181818;
+	position: relative;
+	.media(desktop-xs {
+		.clearfix();
+	});
+	img{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		.opacity(0.28);
+	}
 	h5{
 		font-size: 42px;
 		color: #fff;
+		position: relative;
+		z-index: 2;
 	}
 	.contact, form{
 		padding-top: 100px;
 	}
 	form{
+		position: relative;
+		z-index: 2;
 		.clearfix();
+		.media(desktop-xs {
+			width: 50%;
+			.float(right);
+			});
+		}
 		input, textarea{
 			padding: 15px 20px;
 			width: 100%;
@@ -680,10 +717,31 @@ header{
 				color: #fff;
 			}
 		}
-	}
+		input{
+			.media(desktop-xs {
+			width: 48%;
+			});
+		}
+		input[type=text]{
+			.media(desktop-xs {
+				.float(left);
+			});
+		}
+		input[type=email]{
+			.media(desktop-xs {
+				.float(right);
+			});
+		}
 	.contact{
+		position: relative;
+		z-index: 2;
 		text-align: left;
 		color: #fff;
+		font-size: 0;
+		.media(desktop-xs {
+			width: 50%;
+			.float(left);
+			});
 		h6{
 			font-size: 24px;
 		}
@@ -695,20 +753,40 @@ header{
 			margin: 35px 15px 15px 0;
 			display: inline-block;
 			color: #fff;
+			width: 42px;
+			height: 42px;
 			font-size: 23px;
+			text-align: center;
+			vertical-align: bottom;
+			.box-sizing();
 			.border-radius(50%);
+			.transition();
 		}
 			.f{
 				background: #3b5997;
+				font-weight: bold;
+				line-height: 1.8;
+				&:hover{
+					background: #5f7cb9;
+				}
 			}
 			.t{
-				background: #3ec2f3;
+				background-image: url(../img/twiter.png);
+				background-position-x: 3px;
+				background-color: #3ec2f3;
+				&:hover{
+					background-color: #8dddfb;
+				}
 			}
 			.g{
 				background: #e44c41;
+				&:hover{
+					background: #fd6c61;
+				}
 			}
 		.contact-info{
 			color: #bface2;
+			font-size: 14px;
 			font-family: 'myriad-pro-regular';
 			.opacity(1);
 		}

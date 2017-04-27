@@ -492,11 +492,8 @@ header .nav ul li a:hover:after {
   z-index: 4;
   color: #44c0c2;
   background: #fff;
-  padding: 0px 14px;
   height: 51px;
-  line-height: 38px;
-  font-size: 70px;
-  font-family: 'Arial';
+  width: 51px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -510,11 +507,38 @@ header .nav ul li a:hover:after {
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
+.carousel-control:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  width: 20px;
+  height: 20px;
+  border-top: 1px #44c0c2 solid;
+  border-left: 1px #44c0c2 solid;
+  margin: -9px -4px;
+}
 .carousel-control.prev {
   left: 2%;
 }
+.carousel-control.prev:before {
+  left: 50%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
 .carousel-control.next {
   right: 2%;
+}
+.carousel-control.next:before {
+  right: 50%;
+  -webkit-transform: rotate(-225deg);
+  -moz-transform: rotate(-225deg);
+  -ms-transform: rotate(-225deg);
+  -o-transform: rotate(-225deg);
+  transform: rotate(-225deg);
 }
 .carousel-control:hover {
   background: #44c0c2;
@@ -716,46 +740,77 @@ header .nav ul li a:hover:after {
 #contact {
   padding: 100px 9.4% 175px;
   text-align: center;
-  background: #6f6f6f;
+  background: #181818;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  #contact:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}
+#contact img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-opacity: 0.28;
+  -moz-opacity: 0.28;
+  opacity: 0.28;
 }
 #contact h5 {
   font-size: 42px;
   color: #fff;
+  position: relative;
+  z-index: 2;
 }
 #contact .contact,
 #contact form {
   padding-top: 100px;
+}
+#contact form {
+  position: relative;
+  z-index: 2;
 }
 #contact form:after {
   display: table;
   content: " ";
   clear: both;
 }
-#contact form input,
-#contact form textarea {
+@media (min-width: 1024px) {
+  #contact form {
+    width: 50%;
+    float: right;
+  }
+}
+#contact input,
+#contact textarea {
   padding: 15px 20px;
   width: 100%;
   margin: 15px 0;
 }
-#contact form input::-webkit-input-placeholder,
-#contact form textarea::-webkit-input-placeholder {
+#contact input::-webkit-input-placeholder,
+#contact textarea::-webkit-input-placeholder {
   color: #c1c1c1;
 }
-#contact form input:-moz-placeholder,
-#contact form textarea:-moz-placeholder {
+#contact input:-moz-placeholder,
+#contact textarea:-moz-placeholder {
   color: #c1c1c1;
 }
-#contact form input::-moz-placeholder,
-#contact form textarea::-moz-placeholder {
+#contact input::-moz-placeholder,
+#contact textarea::-moz-placeholder {
   color: #c1c1c1;
 }
-#contact form input:-ms-input-placeholder,
-#contact form textarea:-ms-input-placeholder {
+#contact input:-ms-input-placeholder,
+#contact textarea:-ms-input-placeholder {
   color: #c1c1c1;
 }
-#contact form input,
-#contact form textarea,
-#contact form button {
+#contact input,
+#contact textarea,
+#contact button {
   font-size: 16px;
   color: #44c0c2;
   border: none;
@@ -771,22 +826,46 @@ header .nav ul li a:hover:after {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-#contact form textarea {
+#contact textarea {
   resize: none;
 }
-#contact form button {
+#contact button {
   padding: 15px 50px;
   margin-top: 15px;
   background: #fff;
   float: right;
 }
-#contact form button:hover {
+#contact button:hover {
   background: #44c0c2;
   color: #fff;
 }
+@media (min-width: 1024px) {
+  #contact input {
+    width: 48%;
+  }
+}
+@media (min-width: 1024px) {
+  #contact input[type=text] {
+    float: left;
+  }
+}
+@media (min-width: 1024px) {
+  #contact input[type=email] {
+    float: right;
+  }
+}
 #contact .contact {
+  position: relative;
+  z-index: 2;
   text-align: left;
   color: #fff;
+  font-size: 0;
+}
+@media (min-width: 1024px) {
+  #contact .contact {
+    width: 50%;
+    float: left;
+  }
 }
 #contact .contact h6 {
   font-size: 24px;
@@ -801,22 +880,47 @@ header .nav ul li a:hover:after {
   margin: 35px 15px 15px 0;
   display: inline-block;
   color: #fff;
+  width: 42px;
+  height: 42px;
   font-size: 23px;
+  text-align: center;
+  vertical-align: bottom;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 #contact .contact .f {
   background: #3b5997;
+  font-weight: bold;
+  line-height: 1.8;
+}
+#contact .contact .f:hover {
+  background: #5f7cb9;
 }
 #contact .contact .t {
-  background: #3ec2f3;
+  background-image: url(../img/twiter.png);
+  background-position-x: 3px;
+  background-color: #3ec2f3;
+}
+#contact .contact .t:hover {
+  background-color: #8dddfb;
 }
 #contact .contact .g {
   background: #e44c41;
 }
+#contact .contact .g:hover {
+  background: #fd6c61;
+}
 #contact .contact .contact-info {
   color: #bface2;
+  font-size: 14px;
   font-family: 'myriad-pro-regular';
   -webkit-opacity: 1;
   -moz-opacity: 1;
